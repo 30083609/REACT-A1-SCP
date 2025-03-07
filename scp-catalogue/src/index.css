@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General Styling */
+body {
+  background-color: black;
+  color: #00ff00;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Titles (h2, h3, h4, h5) */
+h2, h3, h4, h5 {
+  color: #00ff00;
+  text-shadow: 0 0 8px rgb(11, 92, 11);
+  text-align: center;
+}
+
+/* SCP Catalogue Title (Only h1) */
+h1.scp-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #00ff00;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+  text-align: center;
+  padding: 15px;
+  animation: glow 1.5s infinite alternate; /* Optional glowing effect */
+}
+
+/* SCP Title Glow Animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgb(11, 92, 11), 0 0 20px rgb(0, 255, 0); }
+  100% { text-shadow: 0 0 15px rgba(0, 255, 0, 1); }
+}
+
+
+/* SCP Card */
+.scp-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: transparent;
+  color: #00ff00;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+  overflow: hidden;
+  padding-bottom: 15px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SCP Image */
+.scp-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Apply Hover Effect: Glow */
+.scp-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+  transform: scale(1.05);
+}
+
+/* SCP ID & Class Text - Positioned Under Image with Shadow */
+.scp-text-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Text Fade-in Effect */
+.fade-in {
+  opacity: 1;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .scp-card {
+    width: 95%;
+  }
+
+  .scp-image {
+    width: 100%;
+    max-height: 350px;
+  }
+}
+
+.scp-header-box {
+  background: rgba(0, 255, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
