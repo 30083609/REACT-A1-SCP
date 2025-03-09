@@ -25,7 +25,7 @@ h1.scp-title {
   color: #00ff00;
   text-shadow: 0 0 15px rgba(0, 255, 0, 1);
   text-align: center;
-  padding: 15px;
+  padding: 20px 5%;  /* Added padding from edges */
   animation: glow 1.5s infinite alternate; /* Optional glowing effect */
 }
 
@@ -35,11 +35,10 @@ h1.scp-title {
   100% { text-shadow: 0 0 15px rgba(0, 255, 0, 1); }
 }
 
-
 /* SCP Card */
 .scp-card {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px; /* Increased max width for better scaling */
   background-color: transparent;
   color: #00ff00;
   text-align: center;
@@ -47,7 +46,7 @@ h1.scp-title {
   transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
   overflow: hidden;
   padding-bottom: 15px;
-  margin: 20px auto;
+  margin: 25px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,9 +61,9 @@ h1.scp-title {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Apply Hover Effect: Glow */
+/* Hover Effect: Green Glow */
 .scp-card:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+  box-shadow: 0 0 25px rgba(0, 255, 0, 1);
   transform: scale(1.05);
 }
 
@@ -73,22 +72,17 @@ h1.scp-title {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  padding: 10px;
+  background: rgba(0, 0, 0, 0.85); /* Darkened background */
+  padding: 12px;
   text-align: center;
   border-radius: 0 0 8px 8px;
+  opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
 /* Text Fade-in Effect */
-.fade-in {
+.scp-card:hover .scp-text-container {
   opacity: 1;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.fade-out {
-  opacity: 0;
-  animation: fadeOut 0.5s ease-in-out;
 }
 
 /* Keyframe Animations */
@@ -115,23 +109,29 @@ h1.scp-title {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 800px) {
+@media (max-width: 1024px) { /* Adjusted for larger mobile screens */
   .scp-card {
-    width: 95%;
+    width: 90%;
   }
 
   .scp-image {
     width: 100%;
     max-height: 350px;
   }
+
+  /* Auto-show GIFs on Mobile */
+  .scp-card img {
+    content: attr(data-gif);
+  }
 }
 
+/* SCP Header Box (For Item # & Class Text) */
 .scp-header-box {
   background: rgba(0, 255, 0, 0.1);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
+  max-width: 420px;
   margin: 0 auto 20px;
 }
