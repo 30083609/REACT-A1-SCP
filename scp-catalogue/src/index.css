@@ -18,15 +18,29 @@ h2, h3, h4, h5 {
   text-align: center;
 }
 
-/* SCP Catalogue Title (Only h1) */
+/* SCP Catalogue Title (h1) */
 h1.scp-title {
   font-size: 4rem;
   font-weight: 900;
   color: #00ff00;
   text-shadow: 0 0 15px rgba(0, 255, 0, 1);
   text-align: center;
-  padding: 20px 5%;
+  padding: 25px 10%;
   animation: glow 1.5s infinite alternate;
+}
+
+/* Responsive title */
+@media (max-width: 1024px) {
+  h1.scp-title {
+    font-size: 3.5rem;
+    padding: 15px 5%;
+  }
+}
+@media (max-width: 768px) {
+  h1.scp-title {
+    font-size: 2.5rem;
+    padding: 10px 5%;
+  }
 }
 
 /* SCP Title Glow Animation */
@@ -50,6 +64,7 @@ h1.scp-title {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 /* SCP Image */
@@ -61,67 +76,37 @@ h1.scp-title {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Auto-Show GIFs on Mobile */
+@media (max-width: 768px) {
+  .scp-card img {
+    content: attr(data-gif);
+  }
+}
+
 /* Hover Effect: Green Glow */
 .scp-card:hover {
   box-shadow: 0 0 25px rgba(0, 255, 0, 1);
   transform: scale(1.05);
 }
 
-/* SCP ID & Class Text - Positioned Under Image with Shadow */
+/* SCP ID & Class Text (Positioned Under Image) */
 .scp-text-container {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
   padding: 12px;
   text-align: center;
   border-radius: 0 0 8px 8px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Text Fade-in Effect */
-.scp-card:hover .scp-text-container {
   opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
+/* Ensure text is always visible on mobile */
+@media (max-width: 768px) {
+  .scp-text-container {
+    opacity: 1 !important;
+    display: block !important;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .scp-card {
-    width: 90%;
-  }
-
-  .scp-image {
-    width: 100%;
-    max-height: 350px;
-  }
-
-  /* Auto-show GIFs on Mobile */
-  .scp-card img {
-    content: attr(data-gif);
   }
 }
 
