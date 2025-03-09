@@ -20,7 +20,7 @@ h2, h3, h4, h5 {
 
 /* SCP Catalogue Title (Only h1) */
 h1.scp-title {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #00ff00;
   text-shadow: 0 0 15px rgba(0, 255, 0, 1);
