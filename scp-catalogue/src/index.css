@@ -25,8 +25,8 @@ h1.scp-title {
   color: #00ff00;
   text-shadow: 0 0 15px rgba(0, 255, 0, 1);
   text-align: center;
-  padding: 20px 5%;  /* Added padding from edges */
-  animation: glow 1.5s infinite alternate; /* Optional glowing effect */
+  padding: 20px 5%;
+  animation: glow 1.5s infinite alternate;
 }
 
 /* SCP Title Glow Animation */
@@ -38,7 +38,7 @@ h1.scp-title {
 /* SCP Card */
 .scp-card {
   width: 100%;
-  max-width: 550px; /* Increased max width for better scaling */
+  max-width: 550px;
   background-color: transparent;
   color: #00ff00;
   text-align: center;
@@ -72,7 +72,7 @@ h1.scp-title {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.85); /* Darkened background */
+  background: rgba(0, 0, 0, 0.85);
   padding: 12px;
   text-align: center;
   border-radius: 0 0 8px 8px;
@@ -109,7 +109,7 @@ h1.scp-title {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1024px) { /* Adjusted for larger mobile screens */
+@media (max-width: 1024px) {
   .scp-card {
     width: 90%;
   }
