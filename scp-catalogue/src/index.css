@@ -115,7 +115,7 @@ h1.scp-title {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 780px) {
+@media (max-width: 800px) {
   .scp-card {
     width: 95%;
   }
