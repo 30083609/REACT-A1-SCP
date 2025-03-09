@@ -11,7 +11,7 @@ body {
   padding: 0;
 }
 
-/* General Titles (h2, h3, h4, h5) */
+/* General Titles */
 h2, h3, h4, h5 {
   color: #00ff00;
   text-shadow: 0 0 8px rgb(11, 92, 11);
@@ -29,7 +29,7 @@ h1.scp-title {
   animation: glow 1.5s infinite alternate;
 }
 
-/* Responsive title */
+/* Responsive Title */
 @media (max-width: 1024px) {
   h1.scp-title {
     font-size: 3.5rem;
@@ -76,27 +76,20 @@ h1.scp-title {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Ensure GIFs auto-show on mobile */
-@media (max-width: 768px) {
-  .scp-card img {
-    content: attr(data-gif);
-  }
-}
-
 /* Hover Effect: Green Glow */
 .scp-card:hover {
   box-shadow: 0 0 25px rgba(0, 255, 0, 1);
   transform: scale(1.05);
 }
 
-/* SCP ID & Class Text (Always visible on mobile) */
+/* SCP ID & Class Text (Now Always Visible on Mobile) */
 .scp-text-container {
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
   padding: 12px;
   text-align: center;
   border-radius: 0 0 8px 8px;
-  opacity: 1; /* Ensures always visible */
+  opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -107,6 +100,11 @@ h1.scp-title {
     opacity: 1 !important;
     display: block !important;
     transform: translateY(0);
+  }
+
+  /* Auto-show GIFs on Mobile */
+  .scp-card img {
+    content: attr(data-gif);
   }
 }
 
@@ -121,24 +119,24 @@ h1.scp-title {
   margin: 0 auto 20px;
 }
 
-/* SCP Description Box */
+/* SCP Description Box - WIDER Now */
 .scp-description-container {
   width: 90%;
-  max-width: 850px; /* Increased width */
+  max-width: 950px; /* 📌 Increased width */
   background-color: #111;
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
   margin-top: 30px;
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* Responsive Adjustments for Smaller Screens */
 @media (max-width: 768px) {
   .scp-description-container {
     width: 95%;
-    max-width: 600px;
-    padding: 15px;
+    max-width: 650px;
+    padding: 20px;
   }
 }
