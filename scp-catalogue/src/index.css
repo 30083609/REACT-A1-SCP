@@ -76,7 +76,7 @@ h1.scp-title {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Auto-Show GIFs on Mobile */
+/* Ensure GIFs auto-show on mobile */
 @media (max-width: 768px) {
   .scp-card img {
     content: attr(data-gif);
@@ -89,19 +89,19 @@ h1.scp-title {
   transform: scale(1.05);
 }
 
-/* SCP ID & Class Text (Positioned Under Image) */
+/* SCP ID & Class Text (Always visible on mobile) */
 .scp-text-container {
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
   padding: 12px;
   text-align: center;
   border-radius: 0 0 8px 8px;
-  opacity: 1;
+  opacity: 1; /* Ensures always visible */
   transform: translateY(0);
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Ensure text is always visible on mobile */
+/* Show text always on mobile */
 @media (max-width: 768px) {
   .scp-text-container {
     opacity: 1 !important;
@@ -110,7 +110,7 @@ h1.scp-title {
   }
 }
 
-/* SCP Header Box (For Item # & Class Text) */
+/* SCP Header Box */
 .scp-header-box {
   background: rgba(0, 255, 0, 0.1);
   border-radius: 10px;
@@ -119,4 +119,26 @@ h1.scp-title {
   box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
   max-width: 420px;
   margin: 0 auto 20px;
+}
+
+/* SCP Description Box */
+.scp-description-container {
+  width: 90%;
+  max-width: 850px; /* Increased width */
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+  margin-top: 30px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .scp-description-container {
+    width: 95%;
+    max-width: 600px;
+    padding: 15px;
+  }
 }
