@@ -18,36 +18,36 @@ h2, h3, h4, h5 {
   text-align: center;
 }
 
-/* SCP Catalogue Title (Only h1) */
+/* SCP Catalogue Title (h1) */
 h1.scp-title {
   font-size: 4rem;
   font-weight: 900;
   color: #00ff00;
   text-shadow: 0 0 15px rgba(0, 255, 0, 1);
   text-align: center;
-  padding: 15px 10%;
+  padding: 20px 12%; /* Increased left & right padding */
   animation: glow 1.5s infinite alternate;
   max-width: 100%;
   word-wrap: break-word;
 }
 
-/* Responsive title (Fixes Mobile Overlap) */
+/* Responsive title (Fixes Mobile Overlap & Ensures Padding) */
 @media (max-width: 1024px) {
   h1.scp-title {
     font-size: 3.5rem;
-    padding: 10px 8%;
+    padding: 15px 10%;
   }
 }
 @media (max-width: 768px) {
   h1.scp-title {
-    font-size: 2.5rem;
-    padding: 10px 5%;
+    font-size: 2.8rem;
+    padding: 12px 8%;
   }
 }
 @media (max-width: 480px) {
   h1.scp-title {
     font-size: 2rem;
-    padding: 10px;
+    padding: 10px 5%;
   }
 }
 
@@ -101,45 +101,11 @@ h1.scp-title {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Ensure text shows on hover and mobile */
+/* Show text on hover (desktop) but always visible on mobile */
 @media (max-width: 1024px) {
   .scp-text-container {
     opacity: 1 !important;
     display: block !important;
-  }
-}
-
-/* Text Fade-in Effect */
-.fade-in {
-  opacity: 1;
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.fade-out {
-  opacity: 0;
-  animation: fadeOut 0.5s ease-in-out;
-}
-
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(10px);
   }
 }
 
@@ -159,9 +125,9 @@ h1.scp-title {
 .scp-header-box {
   background: rgba(0, 255, 0, 0.1);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
-  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
+  max-width: 450px;
   margin: 0 auto 20px;
 }
